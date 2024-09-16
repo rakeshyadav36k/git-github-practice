@@ -1,3 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
 class Solution {
   public:
     int maxLength(string& str) {
@@ -23,3 +27,12 @@ class Solution {
         return ans;
     }
 };
+
+
+int main(){
+    string s;
+    cin >> s;
+
+    Solution obj;
+    cout << obj.maxLength(s) <<endl;
+}
