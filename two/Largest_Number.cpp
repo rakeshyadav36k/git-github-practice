@@ -34,5 +34,12 @@ public:
 
 
 int main(){
+
+    Solution obj;
+    string s;
+    cin >> s;
+
+    cout<< "Largest Number is " << obj.largestNumber(s); 
+
     return 0;
 }
