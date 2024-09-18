@@ -36,10 +36,17 @@ public:
 int main(){
 
     Solution obj;
-    string s;
-    cin >> s;
 
-    cout<< "Largest Number is " << obj.largestNumber(s); 
+    int n;
+    cin >> n;
+    vector<int> v(n);
+
+    for(int i=0; i<n;i++){
+        cin >> v[i];
+    }
+
+
+    cout<< "Largest Number is " << obj.largestNumber(v); 
 
     return 0;
 }
