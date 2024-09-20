@@ -6,6 +6,9 @@ palindrome
 Return the shortest palindrome you can find by performing this transformation.
 */
 
+#include<bits/stdc++.h>
+using namespace std;
+
 class Solution {
 public:
     string shortestPalindrome(string s) {
@@ -35,3 +38,15 @@ private:
         return pi.back();
     }
 };
+
+int main(){
+
+    Solution obj;
+
+    string s;
+    cin >> s;
+
+    cout << "Shortest palindrome is " << obj.shortestPalindrome(s) << endl;
+
+    return 0;
+}
