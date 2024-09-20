@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
 bool cmp(int a, int b){
     string sa = to_string(a);
     string sb = to_string(b);
