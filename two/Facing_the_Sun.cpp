@@ -1,3 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 class Solution {
   public:
     // Returns count buildings that can see sunlight
@@ -16,3 +19,25 @@ class Solution {
         return ans;
     }
 };
+
+int main(){
+    int t;
+    cin >> t;
+
+    while(--t){
+        vector<int> height;
+        string input;
+        getline(cin, input);
+
+        stringstream ss(input);
+        int number;
+        if(ss >> number){
+            height.push_back(number);
+        }
+
+        Solution obj;
+        
+    }
+
+    return 0;
+}
