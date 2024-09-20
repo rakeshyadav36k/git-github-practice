@@ -36,7 +36,9 @@ int main(){
         }
 
         Solution obj;
-        
+        int ans = obj.countBuildings(height);
+        cout<<ans<<endl;
+
     }
 
     return 0;
