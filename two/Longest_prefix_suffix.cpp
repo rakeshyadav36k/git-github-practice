@@ -1,3 +1,9 @@
+/*
+Given a string of characters, find the length of the longest proper prefix which is also a proper suffix.
+
+NOTE: Prefix and suffix can be overlapping but they should not be equal to the entire string.
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
