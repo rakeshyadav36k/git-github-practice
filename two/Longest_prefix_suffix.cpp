@@ -1,3 +1,6 @@
+#include<bits/stdc++.h>
+using namespace std;
+
 class Solution {
   public:
     int lps(string str) {
@@ -29,3 +32,18 @@ class Solution {
         return ans.back();
     }
 };
+
+int main(){
+    int t;
+    cin >> t;
+
+    while(--t){
+        string str;
+        cin >> str;
+
+        Solution obj;
+        cout << obj.lps(str) << endl;
+    }
+
+    return 0;
+}
