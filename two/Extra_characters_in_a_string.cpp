@@ -6,6 +6,8 @@ There may be some extra characters in s which are not present in any of the subs
 Return the minimum number of extra characters left over if you break up s optimally.
 */
 
+#include<bits/stdc++.h>
+using namespace std;
 
 class Solution {
 public:
@@ -29,3 +31,7 @@ public:
         return dp[n];
     }
 };
+
+int main(){
+    return 0;
+}
