@@ -33,5 +33,23 @@ public:
 };
 
 int main(){
+    int t;
+    cin >> t;
+    while(--t){
+        string s;
+        getline(cin, s);
+
+        int n;
+        cin >> n;
+        vector<string> dict(n);
+
+        for(int i = 0; i < n; i++){
+            cin >> dict[i];
+        }
+
+        Solution obj;
+        cout << obj.minExtraChar(s, dict);
+    }
+
     return 0;
 }
