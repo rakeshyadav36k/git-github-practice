@@ -1,3 +1,13 @@
+/*
+Given an unsorted array arr of of positive integers. One number 'A' from set {1, 2,....,n} is 
+missing and one number 'B' occurs twice in array.
+Find numbers A and B.
+
+Expected Time Complexity: O(n)
+Expected Auxiliary Space: O(1)
+*/
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
