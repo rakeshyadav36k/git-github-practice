@@ -9,3 +9,5 @@ You are given a parentheses string s. In one move, you can insert a parenthesis 
 For example, if s = "()))", you can insert an opening parenthesis to be "(()))" or a closing parenthesis to be "())))".
 Return the minimum number of moves required to make s valid.
  */
+
+// 1st method using stack
