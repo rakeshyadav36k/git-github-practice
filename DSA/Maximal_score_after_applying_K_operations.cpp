@@ -7,6 +7,22 @@ In one operation:
 Return the maximum possible score you can attain after applying exactly k operations.
 
 The ceiling function ceil(val) is the least integer greater than or equal to val.
+
+Example 1:
+
+Input: nums = [10,10,10,10,10], k = 5
+Output: 50
+Explanation: Apply the operation to each array element exactly once. The final score is 10 + 10 + 10 + 10 + 10 = 50.
+
+Example 2:
+
+Input: nums = [1,10,3,3,3], k = 3
+Output: 17
+Explanation: You can do the following operations:
+Operation 1: Select i = 1, so nums becomes [1,4,3,3,3]. Your score increases by 10.
+Operation 2: Select i = 1, so nums becomes [1,2,3,3,3]. Your score increases by 4.
+Operation 3: Select i = 2, so nums becomes [1,1,1,3,3]. Your score increases by 3.
+The final score is 10 + 4 + 3 = 17.
  */
  #include<bits/stdc++.h>
  using namespace std;
