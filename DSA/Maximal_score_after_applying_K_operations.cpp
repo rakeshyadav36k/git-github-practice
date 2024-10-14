@@ -8,6 +8,8 @@ Return the maximum possible score you can attain after applying exactly k operat
 
 The ceiling function ceil(val) is the least integer greater than or equal to val.
  */
+ #include<bits/stdc++.h>
+ using namespace std;
 
 class Solution {
 public:
@@ -27,3 +29,7 @@ public:
         return ans;
     }
 };
+
+int main (){
+    return 0;
+}
