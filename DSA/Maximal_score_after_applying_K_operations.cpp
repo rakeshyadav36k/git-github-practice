@@ -8,3 +8,22 @@ Return the maximum possible score you can attain after applying exactly k operat
 
 The ceiling function ceil(val) is the least integer greater than or equal to val.
  */
+
+class Solution {
+public:
+    long long maxKelements(vector<int>& nums, int k) {
+        priority_queue<int> pq(nums.begin(), nums.end());
+        
+        long long ans = 0;
+        while(k--){
+            int topEle = pq.top();
+            pq.pop();
+
+            ans += topEle;
+
+            pq.push(ceil(topEle / 3.0));
+        }
+
+        return ans;
+    }
+};
