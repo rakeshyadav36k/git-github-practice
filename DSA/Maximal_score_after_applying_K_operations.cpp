@@ -54,16 +54,16 @@ int main (){
         int n;
         cin >> n;
 
-        vector<int> vec(n);
+        vector<int> nums(n);
         for(int i=0; i<n; i++){
-            cin >> vec[i];
+            cin >> nums[i];
         }
 
         int k;
         cin >> k;
 
         Solution ob;
-         cout << ob.maxKelements(vec, k) << endl;
+         cout << ob.maxKelements(nums, k) << endl;
     }
 
     return 0;
