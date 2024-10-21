@@ -22,7 +22,7 @@ const studentSchema = new mongoose.Schema({
         minLength : 12
     },
 
-    subject : [string]
+    subject : [String]
 
     // createdAt : {
     //     type : Date,

@@ -23,14 +23,25 @@ db.on("error", ()=>{                                   // if it is failure, it t
 db.once("open", ()=>{    // if there is success, it htrows a event called 'open'
     console.log("Connected to mongoDB");
     // Logic to insert the data into the database
-    // init()
+    init()
+
+    // Running the queries on MongoDB
+    // dbQueries()
     
 })
 
 
-// function init(){
-//     // Logic to insert data in the db
-//     const student = {
-//         name : "Rakesh"
-//     }
-// }
+async function init(){
+    // Logic to insert data in the db
+    const student = {
+        name : "Rakesh",
+        age : 23,
+        email : "rakeshyadav708175064@gmail.com",
+        subject : ["English", "Science", "Maths"]
+    }
+
+    const std_obj = await studentModel1.create(student); // we have to wait at this step
+
+    console.log(std_obj);
+    
+}
