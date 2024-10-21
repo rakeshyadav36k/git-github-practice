@@ -26,7 +26,7 @@ db.once("open", ()=>{    // if there is success, it htrows a event called 'open'
     init()
 
     // Running the queries on MongoDB
-    // dbQueries()
+    dbQueries()
     
 })
 
@@ -44,4 +44,43 @@ async function init(){
 
     console.log(std_obj);
     
+}
+
+async function dbQueries(){
+    // read the student data based on the id
+
+    try{
+        const student = await studentModel1.findById("6716a81133376b98b26fcb61")
+        console.log(student)
+    }
+    catch(err){
+        console.log(err);
+        
+    }
+
+
+    // search based on the name
+    try{
+        // const students = await studentModel.find({name:"Rakesh"})
+        // const students = await studentModel.find({})  // acts like a find all
+        const students = await studentModel1.findOne({name:"Rakesh"})
+        console.log(students)
+    }catch(err){
+        console.log(err)
+    }
+
+
+    /**
+     * Deal with the multiple conditions
+     */
+    const stds = await studentModel1.where("age").gt("10").where("name").equals("Rakesh").limit(2)
+    console.log(stds)
+
+
+    /**
+     * Delete one documents where name = "Vishwa"
+     */
+
+    const student = await studentModel1.deleteOne({name : "Vishwa"})
+    console.log(student)
 }
