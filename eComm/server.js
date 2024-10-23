@@ -11,6 +11,8 @@ const db_config = require('./configs/db.config')
 const user_model = require('./models/user.model')
 const bcrypt = require('bcryptjs')
 
+app.use(express.json()) // middleware | when we pass request body as JSON, by using this middleware, It read as JS object
+
 
 mongoose.connect(db_config.DB_URL) // connection with mongodb
 
@@ -59,6 +61,8 @@ async function init(){
 /**
  * Stich the routes to the server
  */
+
+app.use(express.json()) // middleware | when we pass request body as JSON, by using this middleware, It read as JS object
 require('./routes/auth.routes')(app)
 
 /**
