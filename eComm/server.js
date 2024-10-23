@@ -62,8 +62,8 @@ async function init(){
  * Stich the routes to the server
  */
 
-app.use(express.json()) // middleware | when we pass request body as JSON, by using this middleware, It read as JS object
 require('./routes/auth.routes')(app)
+require('./routes/category.routes')(app)
 
 /**
  * start the server
