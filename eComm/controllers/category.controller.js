@@ -13,7 +13,7 @@ exports.createNewCategory = (req, res) =>{
     //create the category object
     const cat_data = {
         name : request_body.name,
-        discription : request_body.discription
+        description : request_body.description
     }
 
     try {
