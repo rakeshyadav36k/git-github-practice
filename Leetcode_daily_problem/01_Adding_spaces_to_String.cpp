@@ -23,3 +23,24 @@ public:
         return res;
     }
 };
+
+
+//-------------- 2nd method - using two pointer 
+class Solution {
+public:
+    string addSpaces(string s, vector<int>& spaces) {
+        int n = s.size(), m = spaces.size();
+        string res(n + m, ' ');
+        int j = 0; // for spaces
+
+        for(int i = 0; i < n; i++){
+            if(j < m && i == spaces[j]){
+                res[i+j] = ' ';
+                j++;
+            }
+            res[i+j] = s[i];
+        }
+
+        return res;
+    }
+};
