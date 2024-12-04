@@ -8,3 +8,31 @@ Return true if it is possible to make str2 a subsequence of str1 by performing t
 
 Note: A subsequence of a string is a new string that is formed from the original string by deleting some (possibly none) of the characters without disturbing the relative positions of the remaining characters.
  */
+
+class Solution {
+public:
+    bool canMakeSubsequence(string str1, string str2) {
+        int n = str1.size(), i = 0;
+        int m = str2.size(), j = 0;
+        
+        if(n < m) return false;
+        
+        while(i < n){
+            if(j==m) return true;
+            
+            if(str1[i] != 'z' && (str1[i] == str2[j] || str1[i]+1 == str2[j])){
+                i++;
+                j++;
+            }
+            else if(str1[i] == 'z' && (str1[i] == str2[j] || 'a' == str2[j])){
+                i++;
+                j++;
+            }
+            else{
+                i++;
+            }
+        }
+        if(j==m) return true;
+        return false;
+    }
+};
