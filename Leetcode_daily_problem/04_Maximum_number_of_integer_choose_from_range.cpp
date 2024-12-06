@@ -26,3 +26,29 @@ public:
         return cnt;
     }
 };
+
+
+// using binary search
+/*
+Time: O(b⋅log(b)+n⋅log(b)) (Sorting + Binary searching for every number).
+Space: O(1) (No extra space required).
+*/
+class Solution {
+public:
+    int maxCount(vector<int>& banned, int n, int maxSum) {
+        sort(banned.begin(), banned.end());
+        int sum = 0, res = 0;
+
+        for (int i = 1; i <= n; i++) {
+            if (!binary_search(banned.begin(), banned.end(), i)) { // Check banned
+                sum += i;
+                if (sum <= maxSum) {
+                    res++;
+                } else {
+                    return res; // Stop as all further sums will exceed maxSum
+                }
+            }
+        }
+        return res;
+    }
+};
