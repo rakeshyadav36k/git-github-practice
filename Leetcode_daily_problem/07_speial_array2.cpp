@@ -35,3 +35,6 @@ public:
         return ans;
     }
 };
+
+
+// --------- using binary search
