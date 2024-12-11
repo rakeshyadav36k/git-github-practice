@@ -14,8 +14,8 @@ class Solution {
         int jdx = 0;
         
         while (idx >= 0 && jdx < b.size() ) {
-            if (a.at(idx) > b.at(jdx)) {
-                swap(a.at(idx), b.at(jdx));
+            if (a[idx] > b[jdx]) {
+                swap(a[idx], b[jdx]);
             }
             idx--;
             jdx++;
