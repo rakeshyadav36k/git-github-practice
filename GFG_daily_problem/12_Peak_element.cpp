@@ -14,32 +14,48 @@ using namespace std;
 
 class Solution {
   public:
-    int peakElement(vector<int> &arr) {
-        int n = arr.size();
-        if (n == 1)
-            return 0;
+    // int peakElement(vector<int> &arr) {
+    //     int n = arr.size();
+    //     if (n == 1)
+    //         return 0;
 
-        for (int i = 0; i < n; i++)
-        {      
-            if (i == 0)
-            {
-                if (arr[i] >= arr[i + 1])
-                    return i;
+    //     for (int i = 0; i < n; i++)
+    //     {      
+    //         if (i == 0)
+    //         {
+    //             if (arr[i] >= arr[i + 1])
+    //                 return i;
+    //         }
+    //         else if (i == n - 1)
+    //         {
+    //             if (arr[i] >= arr[i - 1])
+    //                 return i;
+    //         }
+    //         else
+    //         {
+    //             if (arr[i] >= arr[i - 1] && arr[i] >= arr[i + 1])
+    //                 return i;
+    //         }
+    //     }
+
+    //     // If no peak element is found, return -1.
+    //     return -1;
+    // }
+
+    int peakElement(vector<int> &arr) {
+        int s=0, e= arr.size()-1;
+        while(s < e){
+            int mid = s+(e-s)/2;
+            if(arr[mid] > arr[mid+1]){
+                //You are in desc part of the array
+                e = mid;
             }
-            else if (i == n - 1)
-            {
-                if (arr[i] >= arr[i - 1])
-                    return i;
-            }
-            else
-            {
-                if (arr[i] >= arr[i - 1] && arr[i] >= arr[i + 1])
-                    return i;
+            else{
+                //You are in asc part
+                s = mid+1;
             }
         }
-
-        // If no peak element is found, return -1.
-        return -1;
+        return s;
     }
 };
 
