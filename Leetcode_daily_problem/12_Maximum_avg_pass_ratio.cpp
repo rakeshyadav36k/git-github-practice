@@ -13,33 +13,39 @@ Return the maximum possible average pass ratio after assigning the extraStudents
 
 class Solution {
 public:
+    #define P pair<double, int>
     double maxAverageRatio(vector<vector<int>>& classes, int extraStudents) {
-        auto gain = [](double pass, double total) {
-            return (pass + 1) / (total + 1) - pass / total;
-        };
+        int n = classes.size();
+        priority_queue<P> pq; 
 
-        priority_queue<pair<double, pair<int, int>>> maxHeap;
-
-        double sum = 0.0;
-
-        for (const auto& cls : classes) {
-            int pass = cls[0], total = cls[1];
-            sum += (double)pass / total;  
-            maxHeap.push({gain(pass, total), {pass, total}});
+        for(int i = 0; i < n; i++){
+            double current_PR = (double)classes[i][0]/classes[i][1];
+            double new_PR = (double)(classes[i][0]+1)/(classes[i][1]+1);
+            double delta = new_PR - current_PR;
+            pq.push({delta, i});
         }
 
-        for (int i = 0; i < extraStudents; ++i) {
-            auto [currentGain, data] = maxHeap.top(); maxHeap.pop();
-            int pass = data.first, total = data.second;
+        while(extraStudents--){
+            auto curr = pq.top();
+            pq.pop();
 
-            sum -= (double)pass / total;
-            pass += 1;
-            total += 1;
-            sum += (double)pass / total;
+            double delta = curr.first;
+            int idx = curr.second;
 
-            maxHeap.push({gain(pass, total), {pass, total}});
+            classes[idx][0]++; // increment total passing student in the class
+            classes[idx][1]++; // increment total student in the class
+
+            double current_PR = (double)classes[idx][0]/classes[idx][1];
+            double new_PR = (double)(classes[idx][0]+1)/(classes[idx][1]+1);
+            delta = new_PR - current_PR;
+            pq.push({delta, idx});            
         }
 
-        return sum / classes.size();
+        double result = 0.0;
+        for(int i = 0; i < n; i++){
+            result += (double)classes[i][0]/classes[i][1];
+        }
+
+        return result/n;
     }
 };
