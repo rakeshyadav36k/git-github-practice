@@ -47,3 +47,55 @@ public:
         return result;                                                           
     }
 };
+
+
+/// using priority queue
+class Solution {
+public:
+    string repeatLimitedString(string s, int repeatLimit) {
+        vector<int> vec(26, 0);
+        for(auto &ch : s){
+            vec[ch - 'a']++;
+        }
+
+        priority_queue<char> pq;
+        for(int i = 0; i < 26; i++){
+            if(vec[i] > 0){
+                pq.push(i + 'a');
+            }
+        }
+
+        string result = "";
+        while(!pq.empty()){
+            char topChar = pq.top();
+            pq.pop();
+
+
+            int freq = vec[topChar - 'a'];
+            freq = min(freq, repeatLimit);
+
+            result.append(freq, topChar);
+            vec[topChar - 'a'] -= freq;
+
+            if(!pq.empty()){
+                char secChar = pq.top();
+                pq.pop();
+
+                if(vec[topChar - 'a'] > 0){
+                    result += secChar;
+                    vec[secChar - 'a']--;
+                }
+
+                if(vec[topChar - 'a'] > 0) pq.push(topChar);
+                if(vec[secChar - 'a'] > 0) pq.push(secChar);
+            }
+            else{
+                break;
+            }
+
+
+        }
+
+        return result;
+    }
+};
