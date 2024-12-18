@@ -7,3 +7,24 @@ If you buy the ith item, then you will receive a discount equivalent to prices[j
 Return an integer array answer where answer[i] is the final price you will pay for the ith item of the shop, 
 considering the special discount.
  */
+
+class Solution {
+public:
+    vector<int> finalPrices(vector<int>& prices) {
+        int n = prices.size();
+        stack<int> st;
+        vector<int> result = prices;
+
+        for(int i = 0; i < n; i++){
+
+            while(!st.empty() && prices[i] <= prices[st.top()]){
+                result[st.top()] = prices[st.top()] - prices[i];
+                st.pop();
+            }
+
+            st.push(i);
+        }
+
+        return result;
+    }
+};
