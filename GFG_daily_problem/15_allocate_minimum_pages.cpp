@@ -15,15 +15,13 @@ using namespace std;
 class Solution {
   public:
   
-    bool ispossible(vector<int> &arr, int k,int mid)
-    {
+    bool ispossible(vector<int> &arr, int k,int mid){
         int n=arr.size();
         int noofstudent=1; //here we denoted no of student to whom pages alloted at starting 
                             //it is only one;
         int pages=0;    //pages read=0;
         
-        for(int i=0;i<arr.size();i++)
-        {
+        for(int i=0;i<arr.size();i++){
             if(pages+arr[i]<=mid)   //we can add pages only when arr[i]+page is smaller than mid;
             {
                 pages+=arr[i];      
