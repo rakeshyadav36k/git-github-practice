@@ -24,6 +24,7 @@ public:
             adjList[node1].push_back(node2);
             adjList[node2].push_back(node1);
         }
+        
         // Step 2: Initialize component count
         int componentCount = 0;
 
