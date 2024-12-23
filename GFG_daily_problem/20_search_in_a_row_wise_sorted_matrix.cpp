@@ -9,6 +9,7 @@ i.e. for any i, j within bounds, mat[i][j] <= mat[i][j+1].
 
 class Solution {
   public:
+  
     // Function to search a given number in row-column sorted matrix.
     bool searchRowMatrix(vector<vector<int>> &mat, int x) {
         int n=mat.size();
