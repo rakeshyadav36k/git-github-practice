@@ -8,23 +8,43 @@ using namespace std;
 
 class Solution {
   public:
+
+    // bool twoSum(vector<int>& arr, int target) {
+    //     int n=arr.size();
+    //     sort(arr.begin(),arr.end());
+    //     int left=0;
+    //     int right=n-1;
+    //     while(left<right){
+    //         int sum=arr[left]+arr[right];
+    //         if(sum == target){
+    //             return true;
+    //         }
+    //         else if(sum<target){
+    //             left++;
+    //         }
+    //         else{
+    //             right--;
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    // using map
     bool twoSum(vector<int>& arr, int target) {
+        // code here
+        
         int n=arr.size();
-        sort(arr.begin(),arr.end());
-        int left=0;
-        int right=n-1;
-        while(left<right){
-            int sum=arr[left]+arr[right];
-            if(sum == target){
-                return true;
-            }
-            else if(sum<target){
-                left++;
-            }
-            else{
-                right--;
-            }
+        unordered_map<int,int> mp;
+        
+        for(int i=0;i<n;i++)
+        {
+            int x=arr[i];
+            if(mp.find(target-x)!=mp.end())
+            return true;
+            
+            mp.insert({x,i});
         }
+        
         return false;
     }
 };
