@@ -3,13 +3,9 @@
 Returned triplet should also be internally sorted i.e. i<j<k.
  */
 
-//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
-
-// } Driver Code Ends
-// User function Template for C++
 class Solution {
   public:
     vector<vector<int>> findTriplets(vector<int> &arr) {
@@ -36,9 +32,6 @@ class Solution {
         return ans;
     }
 };
-
-
-//{ Driver Code Starts.
 
 int main() {
     int t;
@@ -70,4 +63,3 @@ int main() {
     }
     return 0;
 }
-// } Driver Code Ends
