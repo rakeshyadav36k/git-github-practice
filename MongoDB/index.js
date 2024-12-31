@@ -6,6 +6,7 @@ const studentModel1 = require("./models/student.model1")
  */
 
 mongoose.connect("mongodb://127.0.0.1/be_practiceDB")
+// mongoose.connect("mongodb://localhost/be_practiceDB")
 
 const db = mongoose.connection // start the connection with mongodb
 
@@ -74,7 +75,7 @@ async function dbQueries(){
      * Deal with the multiple conditions
      */
     const stds = await studentModel1.where("age").gt("10").where("name").equals("Rakesh").limit(2)
-    console.log(stds)
+    // console.log(stds)
 
 
     /**
@@ -82,5 +83,5 @@ async function dbQueries(){
      */
 
     const student = await studentModel1.deleteOne({name : "Vishwa"})
-    console.log(student)
+    // console.log(student)
 }
