@@ -4,15 +4,8 @@
 Note: The final output will be in lexicographic order.
  */
 
-//{ Driver Code Starts
-// Initial Template for C++
 #include <bits/stdc++.h>
-#include <unordered_map>
 using namespace std;
-
-
-// } Driver Code Ends
-// User function Template for C++
 
 class Solution {
   public:
@@ -20,7 +13,7 @@ class Solution {
         vector<vector<string> > result;
 
         // hash map to maintain groups of anagrams
-        unordered_map<string, vector<string> > umap;
+        unordered_map<string, vector<string> > mp;
 
         for (int i = 0; i < arr.size(); i++) {
             string s = arr[i];
@@ -29,16 +22,15 @@ class Solution {
             sort(s.begin(), s.end());
 
             // add original string to corresponding sorted string in hash map
-            umap[s].push_back(arr[i]);
+            mp[s].push_back(arr[i]);
         }
-        for (auto itr = umap.begin(); itr != umap.end(); itr++)
+        for (auto itr = mp.begin(); itr != mp.end(); itr++)
             result.push_back(itr->second);
 
         return result;
     }
 };
 
-//{ Driver Code Starts.
 
 int main() {
     int t;
@@ -72,4 +64,3 @@ int main() {
     return 0;
 }
 
-// } Driver Code Ends
