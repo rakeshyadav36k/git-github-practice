@@ -5,6 +5,9 @@
 A triangle with three given sides is only possible if sum of any two sides is always greater than the third side.
  */
 
+#include <bits/stdc++.h>
+using namespace std;
+
 class Solution {
   public:
     // Function to count the number of possible triangles.
@@ -38,3 +41,28 @@ class Solution {
         return count;
     }
 };
+
+
+int main() {
+    int t;
+    cin >> t;
+    cin.ignore(); // To ignore the newline after the integer input
+    while (t--) {
+        int n;
+        vector<int> a;
+        string input;
+
+        // Input format: first number n followed by the array elements
+        getline(cin, input);
+        stringstream ss(input);
+        int num;
+        while (ss >> num)
+            a.push_back(num);
+
+        Solution obj;
+        cout << obj.countTriangles(a) << "\n~\n";
+    }
+
+    return 0;
+}
+
