@@ -16,7 +16,6 @@ public:
         for(char ch : s){
             freq[ch - 'a']++;
         }
-
         return freq;
     }
 
@@ -43,7 +42,6 @@ public:
 
             ans.push_back(a);
         }
-
         return ans;
     }
 };
