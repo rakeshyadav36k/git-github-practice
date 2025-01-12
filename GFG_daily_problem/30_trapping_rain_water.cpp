@@ -29,6 +29,32 @@ class Solution {
         }
         return ans;
     }
+
+    /**
+     int maxWater(vector<int> &arr) {
+        int n=arr.size();
+        int left = 0;
+        int right = n-1;
+        
+        int leftMax = 0;
+        int rightMax = 0;
+        
+        long long ans = 0;
+        while(left <= right){
+            if(leftMax <= rightMax){
+                ans += max(0 , leftMax - arr[left]);
+                leftMax = max(leftMax , arr[left]);
+                left++;
+            }
+            else{
+                ans += max(0 , rightMax - arr[right]);
+                rightMax = max(rightMax , arr[right]);
+                right--;
+            }
+        }
+        return ans;
+    }
+     */
 };
 
 int main() {
@@ -55,3 +81,5 @@ int main() {
     return 0;
 }
 
+
+ 
