@@ -11,3 +11,11 @@ Return true if such an array exists or false otherwise.
 
 A binary array is an array containing only 0's and 1's
  */
+
+class Solution {
+public:
+    bool doesValidArrayExist(vector<int>& derived) {
+        int sum = accumulate(derived.begin(), derived.end(), 0);
+        return sum % 2 == 0;
+    }
+};
