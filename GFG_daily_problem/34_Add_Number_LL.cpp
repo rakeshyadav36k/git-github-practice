@@ -60,7 +60,6 @@ void printList(Node* n) {
 }
 
 
-// } Driver Code Ends
 /* node for linked list:
 
 struct Node {
@@ -143,10 +142,6 @@ class Solution
     }
 };
 
-
-
-//{ Driver Code Starts.
-
 int main() {
     int t;
     cin >> t;
@@ -162,5 +157,3 @@ int main() {
     }
     return 0;
 }
-
-// } Driver Code Ends
