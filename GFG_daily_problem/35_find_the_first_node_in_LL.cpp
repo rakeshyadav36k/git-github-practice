@@ -39,17 +39,6 @@ void loopHere(Node *head, Node *tail, int position) {
     tail->next = walk;
 }
 
-
-/*struct Node
-{
-    int data;
-    struct Node *next;
-    Node(int x) {
-        data = x;
-        next = NULL;
-    }
-
-*/
 class Solution {
   public:
     Node* findFirstNode(Node* head) {
