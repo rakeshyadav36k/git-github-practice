@@ -3,12 +3,9 @@
  * Level order traversal of a tree is breadth-first traversal for the tree.
  */
 
-//{ Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
 
-/* A binary tree node has data, pointer to left child
-   and a pointer to right child */
 class Node {
   public:
     int data;
@@ -27,24 +24,6 @@ class Node {
 Node* newNode(int val) {
     return new Node(val);
 }
-
-
-// } Driver Code Ends
-/* A binary tree Node
-class Node {
-  public:
-    int data;
-    Node* left;
-    Node* right;
-
-    // Constructor
-    Node(int val) {
-        data = val;
-        left = nullptr;
-        right = nullptr;
-    }
-};
-*/
 
 class Solution {
   public:
@@ -69,11 +48,6 @@ class Solution {
     }
 };
 
-//{ Driver Code Starts.
-
-/* Helper function to test mirror(). Given a binary
-   search tree, print out its data elements in
-   increasing sorted order.*/
 void inOrder(Node* node) {
     if (node == nullptr)
         return;
@@ -147,7 +121,6 @@ Node* buildTree(string str) {
     return root;
 }
 
-/* Driver program to test size function*/
 int main() {
     int t;
     scanf("%d ", &t);
@@ -167,4 +140,3 @@ int main() {
     return 0;
 }
 
-// } Driver Code Ends
