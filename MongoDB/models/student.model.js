@@ -5,7 +5,6 @@
 const mongoose = require('mongoose')
 
 // 2. Schema
-
 const studentSchema = new mongoose.Schema({
     name : String,
     age : Number
