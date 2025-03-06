@@ -37,3 +37,6 @@ Return a 0-indexed integer array ans of size 2 where ans[0] equals to a and ans[
             return {repeat, missing};
         }
     };
+
+    // 2nd- using hashmap
+    
