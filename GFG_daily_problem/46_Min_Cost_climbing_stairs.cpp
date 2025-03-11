@@ -27,7 +27,7 @@ int main() {
     cin >> t;
     cin.ignore();
 
-    while (t-- > 0) {
+    while (t--) {
         string str;
         getline(cin, str);
 
