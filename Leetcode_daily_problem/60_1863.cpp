@@ -1,4 +1,5 @@
 /**
+ * 
  * The XOR total of an array is defined as the bitwise XOR of all its elements, or 0 if the array is empty.
 
 For example, the XOR total of the array [2,5,6] is 2 XOR 5 XOR 6 = 1.
@@ -9,7 +10,7 @@ Note: Subsets with the same elements should be counted multiple times.
 An array a is a subset of an array b if a can be obtained from b by deleting some (possibly zero) elements of b.
  */
 
- //1st - generate all subsets using backtracking
+ // 1st - generate all subsets using backtracking
  class Solution {
     public:
         int subsetXORSum(vector<int>& nums) {
@@ -71,7 +72,6 @@ An array a is a subset of an array b if a can be obtained from b by deleting som
                 return withElement + withoutElement;
             }
         };
-
 
         // 3rd - bit manupulation
         class Solution {
