@@ -2,7 +2,7 @@
  * Given an integer array nums, return true if you can partition the array into two subsets such that the sum of the elements in both subsets is equal or false otherwise.
  */
 
- // 1st- dp using recursion
+ // 1st- dp using recursion (top-down method)
  class Solution {
     public:
         bool f(int ind,int target,vector<int> nums,vector<vector<int>> &dp){
@@ -33,8 +33,7 @@
         }
     };
 
-// 2nd - bottom up
-
+// 2nd - bottom-up approach
     class Solution {
         public:
                 
