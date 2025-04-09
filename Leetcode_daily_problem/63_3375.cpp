@@ -12,17 +12,23 @@ For each index i where nums[i] > h, set nums[i] to h.
 Return the minimum number of operations required to make every element in nums equal to k. If it is impossible to make all elements equal to k, return -1.
  */
 
- class Solution {
-    public:
-        int minOperations(vector<int>& nums, int k) {
-            unordered_set<int> st;
-            for (int x : nums) {
-                if (x < k) {
-                    return -1;
-                } else if (x > k) {
-                    st.insert(x);
-                }
+class Solution
+{
+public:
+    int minOperations(vector<int> &nums, int k)
+    {
+        unordered_set<int> st;
+        for (int x : nums)
+        {
+            if (x < k)
+            {
+                return -1;
             }
-            return st.size();
+            else if (x > k)
+            {
+                st.insert(x);
+            }
         }
-    };
+        return st.size();
+    }
+};
