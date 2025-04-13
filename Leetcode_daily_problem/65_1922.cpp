@@ -8,24 +8,25 @@ A digit string is a string consisting of digits 0 through 9 that may contain lea
  */
 
  class Solution {
-    private:
-        static constexpr int mod = 1000000007;
-    
     public:
-        int countGoodNumbers(long long n) {
-            // use fast exponentiation to calculate x^y % mod
-            auto quickmul = [](int x, long long y) -> int {
-                int ret = 1, mul = x;
-                while (y > 0) {
-                    if (y % 2 == 1) {
-                        ret = (long long)ret * mul % mod;
-                    }
-                    mul = (long long)mul * mul % mod;
-                    y /= 2;
+        long long helper(long long base, long long expo, long long mod) {
+            long long ans = 1;
+            while (expo > 0) {
+                if (expo % 2 == 0) {
+                    base = (base * base) % mod;
+                    expo = expo / 2;
+                } else {
+                    ans = (ans * base) % mod;
+                    expo -= 1;
                 }
-                return ret;
-            };
+            }
+            return ans;
+        }
     
-            return (long long)quickmul(5, (n + 1) / 2) * quickmul(4, n / 2) % mod;
+        int countGoodNumbers(long long n) {
+            long long even = (n + 1) / 2;
+            long long odd = n / 2;
+            long long mod = 1e9 + 7;
+            return (int)((helper(5, even, mod) * helper(4, odd, mod)) % mod);
         }
     };
