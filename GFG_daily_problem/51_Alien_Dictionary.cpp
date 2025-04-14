@@ -9,3 +9,63 @@ A string a is lexicographically smaller than a string b if, at the first positio
 
 Note: Your implementation will be tested using a driver code. It will print true if your returned order correctly follows the alien language’s lexicographic rules; otherwise, it will print false.
  */
+
+ class Solution{
+    public:
+    vector<int> topoSort(int V, vector<int> adj[]) 
+	{
+	    vector<int> topo;
+	    int inDeg[V]={0};
+	    for(int i=0;i<V;i++)       // node with thier indegree
+	    {
+	        for(auto it:adj[i])
+	            inDeg[it]++;
+	    }
+	    queue<int> q;
+	    for(int i=0;i<V;i++)        // push all the nodes with indegree '0' in the queue
+	    {
+	        if(inDeg[i]==0){
+	            q.push(i);
+	            
+	        }
+	    }
+	    
+	    while(!q.empty())
+	    {
+	        int node=q.front();
+	        q.pop();
+	        topo.push_back(node);
+	        
+	        for(auto it:adj[node]){ 
+	            inDeg[it]--;
+	            if(inDeg[it]==0) q.push(it);
+	        }
+	    }
+	    
+	    return topo;
+	}
+    
+    string findOrder(string dict[], int N, int K) {
+        vector<int> adj[K];
+        for(int i=0;i<N-1;i++){
+            string s1=dict[i];
+            string s2=dict[i+1];
+            int len=min(s1.size(),s2.size());
+            for(int j=0;j<len;j++){
+                if(s1[j]!=s2[j]){
+                    adj[s1[j]-'a'].push_back(s2[j]-'a');
+                    break;
+                }
+            }
+        }
+        
+        vector<int> topo = topoSort(K,adj);
+        string ans="";
+        for(int i=0;i<K;i++){
+            ans = ans + char(topo[i]+'a');
+        }
+        
+        return ans;
+        
+    }
+};
