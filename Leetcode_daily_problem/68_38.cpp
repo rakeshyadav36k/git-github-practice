@@ -11,22 +11,25 @@ Given a positive integer n, return the nth element of the count-and-say sequence
 class Solution {
     public:
         string countAndSay(int n) {
-            string res = "1";
-            for (int i = 1; i < n; i++) {
-                string temp = "";
-                int count = 1;
-                for (int j = 1; j < res.size(); j++) {
-                    if (res[j] == res[j - 1]) {
-                        count++;
+            string curr = "1";
+            if (n == 1) return curr;
+            for (int i = 2; i <= n; i++) {
+                string next = "";
+                int cnt = 1;
+                char ele = curr[0];
+                for (int j = 1; j < curr.size(); j++) {
+                    if (curr[j] == ele) {
+                        cnt++;
                     } else {
-                        temp += to_string(count) + res[j - 1];
-                        count = 1;
+                        next += to_string(cnt) + ele;
+                        ele = curr[j];
+                        cnt = 1;
                     }
                 }
-                temp += to_string(count) + res.back();
-                res = temp;
+                next += to_string(cnt) + ele;
+                curr = next;
             }
-            return res;
+            return curr;
         }
     };
 
