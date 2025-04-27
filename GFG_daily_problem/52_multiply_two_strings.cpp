@@ -5,7 +5,6 @@ Note: The numbers can be negative and You are not allowed to use any built-in fu
 
  class Solution{
     public:
-      /*You are required to complete below function */
       string multiplyStrings(string str1, string str2) {
           // case if any string have '-' sign
           string s1 = str1 , s2 = str2;
