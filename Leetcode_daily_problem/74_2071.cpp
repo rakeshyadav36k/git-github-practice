@@ -6,8 +6,8 @@ Additionally, you have pills magical pills that will increase a worker's strengt
 Given the 0-indexed integer arrays tasks and workers and the integers pills and strength, return the maximum number of tasks that can be completed.
  */
 
- // 1st - Binary Search + Greedy Selection of Workers
 
+ // 1st - Binary Search + Greedy Selection of Workers
  class Solution {
     public:
         int maxTaskAssign(vector<int>& tasks, vector<int>& workers, int pills,
