@@ -10,6 +10,8 @@ Since the answer may be very large, return it modulo 109 + 7.
  
  */
 
+//Approach: Dynamic Programming + Prefix Sum Optimization
+
  class Solution {
 public:
     int possibleStringCount(string word, int k) {
