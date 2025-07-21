@@ -19,3 +19,9 @@ public:
         return res;
     }
 };
+// Example usage:
+// Solution sol;        
+// string result = sol.makeFancyString("leeetcode");
+// cout << result; // Output: "leetcode"    
+
+// string result2 = sol.makeFancyString("aaabaaaa");
