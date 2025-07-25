@@ -24,3 +24,10 @@ int maximumUniqueSubarray(vector<int>& nums) {
 
     return max_sum;
 }
+// Example usage:
+// vector<int> nums = {4,2,4,5,6};
+// int result = maximumUniqueSubarray(nums);
+// cout << result << endl; // Output: 17 (subarray [5,6] gives the maximum sum)
+// vector<int> nums2 = {1,2,3,4};           
+// int result2 = maximumUniqueSubarray(nums2);
+// cout << result2 << endl; // Output: 10 (subarray [1,
