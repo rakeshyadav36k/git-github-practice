@@ -1,7 +1,9 @@
 /**
  * Leetcode Daily Problem
  * Problem: 118. Pascal's Triangle      
-    * Difficulty: Easy                
+    * Difficulty: Easy 
+    * Link: https://leetcode.com/problems/pascals-triangle/
+    *                
  */
 
  class Solution {
