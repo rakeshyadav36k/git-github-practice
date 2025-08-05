@@ -28,3 +28,9 @@ int unplacedFruitTypes(vector<int>& fruits, vector<int>& baskets) {
 
     return unplaced;
 }
+/**
+ * Leetcode Daily Problem
+ * Problem: 3477. fruits-into-baskets-ii
+ * Difficulty: Medium
+ * Link: https://leetcode.com/problems/fruits-into-baskets-ii/
+ */
