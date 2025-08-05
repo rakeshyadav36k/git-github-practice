@@ -9,3 +9,22 @@ Each basket can hold only one type of fruit.
 If a fruit type cannot be placed in any basket, it remains unplaced.
 Return the number of fruit types that remain unplaced after all possible allocations are made.
  */
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int unplacedFruitTypes(vector<int>& fruits, vector<int>& baskets) {
+    sort(baskets.begin(), baskets.end());
+    int unplaced = 0;
+
+    for (int fruit : fruits) {
+        auto it = lower_bound(baskets.begin(), baskets.end(), fruit);
+        if (it != baskets.end()) {
+            baskets.erase(it);
+        } else {
+            unplaced++;
+        }
+    }
+
+    return unplaced;
+}
