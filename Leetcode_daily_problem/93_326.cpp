@@ -3,3 +3,8 @@
 
 An integer n is a power of three, if there exists an integer x such that n == 3x.
  */
+bool isPowerOfThree(int n) {
+    if (n <= 0) return false;
+    while (n % 3 == 0) n /= 3;
+    return n == 1;
+}
