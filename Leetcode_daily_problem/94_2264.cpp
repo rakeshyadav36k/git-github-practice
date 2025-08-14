@@ -22,3 +22,14 @@ public:
         return (result == -1) ? "" : string(3, '0' + result);
     }
 };
+// Example usage
+#include <iostream>
+using namespace std;
+
+int main() {
+    Solution sol;
+    cout << sol.largestGoodInteger("6777133339") << endl;  // Output: "777"
+    cout << sol.largestGoodInteger("2300019") << endl;     // Output: "000"
+    cout << sol.largestGoodInteger("1234") << endl;        // Output: ""
+    return 0;
+}
