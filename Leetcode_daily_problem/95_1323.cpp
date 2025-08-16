@@ -16,3 +16,13 @@ int maximum69Number (int num) {
     }
     return stoi(s);
 }
+// Example usage
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 9669;
+    int maxNum = maximum69Number(num);
+    cout << "Maximum number after changing 6 to 9: " << maxNum << endl;
+    return 0;
+}
