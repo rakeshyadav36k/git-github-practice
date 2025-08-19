@@ -18,3 +18,14 @@ public:
         return cnt;
     }
 };
+
+// Example usage
+#include <iostream>
+#include <vector>
+
+int main() {
+    Solution sol;
+    std::vector<int> nums = {1, 0, 0, 2, 0, 0, 0, 3};
+    std::cout << sol.zeroFilledSubarray(nums) << std::endl;  // Output: 10
+    return 0;
+}
