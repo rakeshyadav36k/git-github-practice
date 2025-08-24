@@ -28,3 +28,14 @@ public:
         return maxLength;
     }
 };
+// Example usage
+#include <iostream>
+#include <vector>
+
+int main() {
+    Solution solution;
+    std::vector<int> nums = {1, 1, 0, 1};
+    int result = solution.longestSubarray(nums);
+    std::cout << "Longest subarray length: " << result << std::endl;
+    return 0;
+}
