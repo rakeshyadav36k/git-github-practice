@@ -29,8 +29,7 @@ public:
     }
 };
 // Example usage
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 
 int main() {
     Solution solution;
