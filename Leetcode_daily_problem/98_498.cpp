@@ -27,3 +27,22 @@ public:
         return result;
     }
 };
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    Solution sol;
+    vector<vector<int>> matrix = {
+        { 1, 2, 3 },
+        { 4, 5, 6 },
+        { 7, 8, 9 }
+    };
+    vector<int> result = sol.findDiagonalOrder(matrix);
+
+    for (int num : result) {
+        cout << num << " ";
+    }
+    cout << endl;
+    return 0;
+}
