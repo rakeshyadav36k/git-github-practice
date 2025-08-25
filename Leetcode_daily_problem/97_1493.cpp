@@ -3,6 +3,9 @@
 
 Return the size of the longest non-empty subarray containing only 1's in the resulting array. Return 0 if there is no such subarray.
  */
+#include <bits/stdc++.h>
+using namespace std;
+
 class Solution {
 public:
     int longestSubarray(vector<int>& nums) {
@@ -29,7 +32,7 @@ public:
     }
 };
 // Example usage
-#include <bits/stdc++.h>
+
 
 int main() {
     Solution solution;
