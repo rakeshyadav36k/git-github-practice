@@ -3,6 +3,9 @@
  * Find the number of triangles that can be formed with three different array elements as lengths of three sides of the triangle. 
  * A triangle with three given sides is only possible if sum of any two sides is always greater than the third side.
  */
+
+#include <bits/stdc++.h>
+using namespace std;
 int countTriangles(int arr[], int n) {
     // Sort the array
     sort(arr, arr + n);
@@ -23,4 +26,11 @@ int countTriangles(int arr[], int n) {
         }
     }
     return count;
+}
+
+int main() {
+    int arr[] = {4, 6, 3, 7};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    cout << "Number of triangles: " << countTriangles(arr, n) << endl;
+    return 0;
 }
