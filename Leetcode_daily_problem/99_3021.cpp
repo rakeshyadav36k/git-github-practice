@@ -27,3 +27,8 @@ int countWinningPairs(int n, int m) {
     }
     return count;
 }
+int main() {
+    int n = 3, m = 4;
+    cout << "Number of winning pairs (x, y): " << countWinningPairs(n, m) << endl;
+    return 0;
+}
