@@ -13,4 +13,17 @@ The number of flowers x in the first lane must be in the range [1,n].
 The number of flowers y in the second lane must be in the range [1,m].
 Return the number of possible pairs (x, y) that satisfy the conditions mentioned in the statement.
  */
+#include <bits/stdc++.h>
+using namespace std;
 
+int countWinningPairs(int n, int m) {
+    int count = 0;
+    for (int x = 1; x <= n; ++x) {
+        for (int y = 1; y <= m; ++y) {
+            if ((x + y) % 2 == 1) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
