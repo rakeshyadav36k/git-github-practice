@@ -13,3 +13,13 @@ Return 2 if Person 2 arrives first.
 Return 0 if both arrive at the same time.
 Return the result accordingly.
  */
+class Solution {
+public:
+    int closestMeetingNode(int x, int y, int z) {
+        int dist1 = abs(x - z);
+        int dist2 = abs(y - z);
+        if (dist1 < dist2) return 1;
+        else if (dist1 > dist2) return 2;
+        else return 0;
+    }
+};
