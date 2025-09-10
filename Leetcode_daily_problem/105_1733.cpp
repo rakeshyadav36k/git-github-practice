@@ -44,3 +44,19 @@ public:
         return cncon.size() - max_cnt;
     }
 };
+
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+    Solution sol;
+    int n = 3;
+    vector<vector<int>> languages = {{2}, {1, 2}, {3}};
+    vector<vector<int>> friendships = {{1, 2}, {1, 3}, {2, 3}};
+    int result = sol.minimumTeachings(n, languages, friendships);
+    cout << "Minimum number of users to teach: " << result << endl;
+    return 0;
+}
