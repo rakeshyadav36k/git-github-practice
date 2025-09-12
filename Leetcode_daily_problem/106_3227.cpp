@@ -11,6 +11,12 @@ Return true if Alice wins the game, and false otherwise.
 
 The English vowels are: a, e, i, o, and u.
  */
+#include <string>
+#include <algorithm>
+#include <ranges>
+using namespace std;
+#include <cctype>
+#include <iostream>     
 class Solution {
 public:
     bool doesAliceWin(string s) {
@@ -19,3 +25,9 @@ public:
         });
     }
 };
+int main() {
+    Solution sol;
+    string s = "leetcode";
+    cout << boolalpha << sol.doesAliceWin(s) << endl; // Output: true
+    return 0;
+}
